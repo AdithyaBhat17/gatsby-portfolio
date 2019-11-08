@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiTwitter, FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi'
+import { FaTwitter, FaGithub, FaMediumM, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
 
 export const Social = () => {
     return (
@@ -9,28 +9,35 @@ export const Social = () => {
              rel="noopener noreferrer" 
              href="https://twitter.com/chinnurkulkarni"
             >
-                <FiTwitter />
+                <FaTwitter />
             </a>
             <a
              target="_blank" 
              rel="noopener noreferrer" 
-             href="https://twitter.com/chinnurkulkarni"
+             href="https://github.com/shrinidhikulkarni7"
             >
-                <FiGithub />
+                <FaGithub />
             </a>
             <a
              target="_blank" 
              rel="noopener noreferrer" 
-             href="https://twitter.com/chinnurkulkarni"
+             href="https://medium.com/@davidcesc"
             >
-                <FiLinkedin />
+                <FaMediumM />
             </a>
             <a
              target="_blank" 
              rel="noopener noreferrer" 
-             href="https://twitter.com/chinnurkulkarni"
+             href="https://www.linkedin.com/in/shrinidhi-kulkarni-02353849/"
             >
-                <FiInstagram />
+                <FaLinkedinIn />
+            </a>
+            <a
+             target="_blank" 
+             rel="noopener noreferrer" 
+             href="https://www.instagram.com/_shrinidhi/"
+            >
+                <FaInstagram />
             </a>
         </div>
     )
