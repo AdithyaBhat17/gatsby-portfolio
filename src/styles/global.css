@@ -69,4 +69,11 @@ img {
     } .navigation {
         justify-content: space-around;
     }
+    .error-img {
+        width: 100%;
+        margin: 5vh auto;
+    }
+    .error-p {
+        text-align: center;
+    }
 }
