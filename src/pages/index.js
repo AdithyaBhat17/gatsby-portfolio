@@ -1,10 +1,11 @@
 import React from "react"
 import '../components/home.module.css'
-import { Social } from "../components/"
+import { Social, Nav } from "../components/"
 
 export default () => {
     return (
         <div className="dark">
+            <Nav page={1} />
             <img
              src="https://avatars0.githubusercontent.com/u/8757808?s=460&v=4" 
              alt="Shrinidhi Kulkarni"
@@ -22,7 +23,7 @@ export default () => {
                     Medium
                 </a> <br/>
                 Always up for coffee and beer!
-            </p> <br/>
+            </p> <br/> 
             <Social />
         </div>
     )

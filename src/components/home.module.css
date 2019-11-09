@@ -8,7 +8,7 @@ h1 {
 p {
     text-align: center;
     color: #f3f3f3;
-    line-height: 25px;
+    line-height: 30px;
 }
 
 img {
@@ -16,9 +16,30 @@ img {
     border: 10px solid #feca76;
     border-radius: 50%;
     display: block;
-    margin: 10vh auto 0;
+    margin: 5vh auto 0;
+}
+
+.error-img {
+    border: none !important;
+    border-radius: 0 !important;
 }
 
 a {
     color: #feca76;
+}
+
+@media only screen and (max-width: 767px) {
+    h1 {
+        font-size: 2em;
+        text-align: left;
+    }
+    p {
+        text-align: left;
+        line-height: 28px;
+        margin: 0 auto;
+    }
+    img {
+        width: 40%;
+        margin: auto auto auto 0
+    }
 }
