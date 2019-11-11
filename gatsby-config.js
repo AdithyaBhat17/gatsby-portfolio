@@ -5,7 +5,26 @@
  */
 
 module.exports = {
-    plugins: [
-      `gatsby-plugin-styled-components`
-    ]
+  siteMetadata: {
+    title: "Shrinidhi Kulkarni",
+    description: "A DevOps Engineer based in Bengaluru, IN"
+  },
+  plugins: [
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`
+      }
+    },
+    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: `${__dirname}/src/pages`
+      }
+    },
+  ]
 }
