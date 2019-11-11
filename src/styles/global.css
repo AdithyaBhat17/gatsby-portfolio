@@ -105,6 +105,20 @@ code {
     white-space: pre-wrap;
 }
 
+.blog-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-link {
+    color: #f3f3f3;
+}.blog-link > a {
+    font-weight: bold;
+    text-underline-position: under;
+    font-size: 1em;
+}
+
 @media only screen and (max-width: 767px) {
     .social {
         justify-content: left;

@@ -1,10 +1,12 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Helmet from "react-helmet";
 import { Nav } from "../components";
 
-export const Blog = ({ data: { markdownRemark } }) => {
+export const Blog = ({ data: { markdownRemark }, pageContext }) => {
   const { frontmatter, html } = markdownRemark;
+
+  console.log(pageContext)
 
   return (
     <div className="blog-post-container">
@@ -15,8 +17,28 @@ export const Blog = ({ data: { markdownRemark } }) => {
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </div>
+        /> <br/>
+        <div className="blog-links">
+          {
+            pageContext.prev !== null ? 
+            <div className="blog-link">
+              Prev <br/>
+              <Link to={pageContext.prev.frontmatter.path}>{pageContext.prev.frontmatter.title}</Link>
+            </div> :
+            <span>
+            </span>
+          }
+          {
+            pageContext.next !== null ? 
+            <div style={{textAlign: 'right'}} className="blog-link">
+              Next <br/>
+              <Link to={pageContext.next.frontmatter.path}>{pageContext.next.frontmatter.title}</Link>
+            </div> :
+            <span>
+            </span>
+          }
+        </div>
+      </div>      
     </div>
   );
 };
