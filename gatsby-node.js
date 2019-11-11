@@ -5,31 +5,52 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const blogPostTemplate = path.resolve(`src/templates/Blog.js`)
 
-  const result = await graphql(`
-    {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            frontmatter {
-              path
+  return new Promise((resolve, _reject) => {
+    resolve(graphql(`
+      {
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date] }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              frontmatter {
+                path
+                title
+              }
+            }
+            next {
+              frontmatter {
+                path
+                title
+              }
+            }
+            prev: previous {
+              frontmatter {
+                path
+                title
+              }
             }
           }
         }
       }
-    }
-  `)
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
+    `)
+    .then(result => {
+      const posts = result.data.allMarkdownRemark.edges
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: node.frontmatter.path,
-      component: blogPostTemplate
-    })
-  })
-}
+      posts.forEach(({node, next, prev}, index) => {
+        const path = node.frontmatter.path
+        createPage({
+          path,
+          component: blogPostTemplate,
+          context: {
+            pathSlug: path,
+            prev,
+            next
+          }
+        })
+        resolve()
+      })
+    }) 
+  )}
+)}
