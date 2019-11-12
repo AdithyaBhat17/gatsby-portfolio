@@ -33,6 +33,12 @@ These steps will help start the gatsby development server at http://localhost:80
  ### Deployment steps
  
  * Generate static build files - `gatsby build` (this generates static files at `public/`)
- * Deploy on surge - `surge public/ https://<your_domain_name>.surge.sh
+ * Deploy on surge - `surge public/ https://<your_domain_name>.surge.sh`
+ 
+ ### TODO
+ 
+ - [ ] setup netlify/contentful cms for adding articles
+ - [ ] complete about page
+ - [ ] complete contact page
  
  Happy coding :sparkles:
